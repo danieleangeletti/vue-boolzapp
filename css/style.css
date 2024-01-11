@@ -31,6 +31,10 @@
     background-color: #FAFAFA;
 }
 
+.sent-message-bg {
+    background-color: #D5F9BA;
+}
+
 .icons-color {
     color: #989898;
 }
@@ -76,4 +80,8 @@
 
 .h-90 {
     height: 90%;
+}
+
+.max-width-messages {
+    max-width: 75%;
 }
