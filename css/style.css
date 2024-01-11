@@ -15,6 +15,19 @@
     background-color: #DADBD4;
 }
 
+.lightgrey-app-bg {
+    background-color: #EAEAEA;
+}
+
+.icons-color {
+    color: #989898;
+}
+
+.last-access {
+    color: #838790;
+    font-size: 0.7em;
+}
+
 .my-border {
     border: 1px dashed black;
 }
