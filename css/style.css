@@ -19,21 +19,27 @@
     background-color: #EAEAEA;
 }
 
+.notification-column-bg {
+    background-color: #8EDAFC;
+}
+
 .icons-color {
     color: #989898;
 }
 
-.last-access {
+.smaller {
     color: #838790;
-    font-size: 0.7em;
+    font-size: 0.8em;
+}
+
+.bell-container {
+    width: 43px;
+    height: 43px;
+    background-color: white;
 }
 
 .my-border {
     border: 1px dashed black;
-}
-
-.h-5 {
-    height: 5%;
 }
 
 .h-8 {
@@ -44,8 +50,8 @@
     height: 10%;
 }
 
-.h-77 {
-    height: 77%;
+.h-74 {
+    height: 74%;
 }
 
 .h-84 {
