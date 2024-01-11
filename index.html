@@ -64,7 +64,7 @@
 
                         <div class="h-74 bg-white pt-1 ps-3 pe-3 pb-1 overflow-auto">
 
-                            <div v-for="(contact, i) in contacts" class="d-flex justify-content-between h-10 mb-2">
+                            <div @click="active(i)" v-for="(contact, i) in contacts" class="d-flex justify-content-between h-10 mb-2" :class="{'clicked-user-bg': i == active_index}">
                                 <div class="h-100 d-flex">
                                     <div class="img-container h-100">
                                         <img class="h-100 rounded-circle" :src="contact.avatar" alt="">
