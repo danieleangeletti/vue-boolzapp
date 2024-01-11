@@ -27,9 +27,17 @@
     color: #989898;
 }
 
+.dark-font {
+    color: #5F687D;
+}
+
 .smaller {
     color: #838790;
     font-size: 0.8em;
+}
+
+.bigger {
+    font-size: 1.2em;
 }
 
 .bell-container {
