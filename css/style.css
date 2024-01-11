@@ -1,0 +1,23 @@
+.big-container {
+    width: 100vw;
+    height: 100vh;
+}
+
+.my-container {
+    max-width: 1000px;
+    height: 80vh;
+    background-color: black;
+    z-index: 1;
+}
+
+.green-background {
+    width: 100vw;
+    height: 20vh;
+    background-color: #009688;
+}
+
+.grey-background {
+    width: 100vw;
+    height: 80vh;
+    background-color: #DADBD4;
+}
