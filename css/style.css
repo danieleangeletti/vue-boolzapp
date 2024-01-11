@@ -23,6 +23,14 @@
     background-color: #8EDAFC;
 }
 
+.messages-area-bg {
+    background-image: url("../img/mine.jpg");
+}
+
+.new-chat-bg {
+    background-color: #FAFAFA;
+}
+
 .icons-color {
     color: #989898;
 }
