@@ -116,29 +116,11 @@
                                 
                                 <div v-for="(single_message, i) in contacts[active_index].messages" class="mb-3">
 
-                                    <div class="d-flex justify-content-end">
+                                    <div class="d-flex" :class="{'justify-content-end': single_message.status == 'sent'}">
 
-                                        <div class="sent-message-bg p-2 rounded max-width-messages">
+                                        <div class="p-2 rounded max-width-messages" :class="{'sent-message-bg': single_message.status == 'sent', 'bg-white': single_message.status == 'received'}">
                                             <div>
                                                 {{ single_message.message }}
-                                            </div>
-
-                                            <div class="text-end smaller">
-                                                15:30
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-                                    
-                                </div>
-
-                                <div class="mb-3">
-
-                                    <div class="d-flex justify-content-start">
-
-                                        <div class="bg-white p-2 rounded max-width-messages">
-                                            <div>
-                                                Tutto fatto!
                                             </div>
 
                                             <div class="text-end smaller">
