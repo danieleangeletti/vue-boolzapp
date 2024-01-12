@@ -3,6 +3,7 @@ const { createApp } = Vue;
 createApp({
     data(){
         return {
+            search: '',
             new_messages: '',
             active_index: 0,
             contacts: [
@@ -195,6 +196,11 @@ createApp({
                     this.contacts[this.active_index].messages.push(new_reply_message_obj);
                   }, 1000);
             }
+        }
+       },
+       show_contact(){
+        if (this.contacts[this.active_index].name.includes(this.search)){
+            console.log('nabbo')
         }
        }
     }

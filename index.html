@@ -57,7 +57,7 @@
 
                             <div class="input-group">
                                 <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass smaller"></i></span>
-                                <input type="text" class="form-control smaller" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="basic-addon1">
+                                <input @keyup="show_contact" v-model="search" type="text" class="form-control smaller" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="basic-addon1">
                             </div>
 
                         </div>
