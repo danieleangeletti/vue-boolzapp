@@ -3,7 +3,7 @@ const { createApp } = Vue;
 createApp({
     data(){
         return {
-            active_index: null,
+            active_index: 0,
             contacts: [
                 {
                     name: 'Michele',

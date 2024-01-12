@@ -114,14 +114,13 @@
                             
                             <div class="h-100 pt-4 ps-5 pe-5 pb-4 overflow-auto">
                                 
-                                <div v-for="(contact, i) in contacts" class="mb-3">
+                                <div v-for="(single_message, i) in contacts[active_index].messages" class="mb-3">
 
                                     <div class="d-flex justify-content-end">
 
                                         <div class="sent-message-bg p-2 rounded max-width-messages">
-                                            <div v-for="(single_message, j) in contacts[i].messages">
-                                                <!-- v-if="contacts[i].messages[j].status == 'sent' -->
-                                                {{ contacts[i].messages[j].message }}
+                                            <div>
+                                                {{ single_message.message }}
                                             </div>
 
                                             <div class="text-end smaller">
