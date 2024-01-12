@@ -180,12 +180,12 @@ createApp({
         if (event.keyCode === 13){
             if (this.new_messages.length > 0){
                 const new_message_obj = {
-                    date: '12:14:00',
+                    date: '12/01/2024 12:14:00',
                     message: this.new_messages,
                     status: 'sent'
                 };
                 const new_reply_message_obj = {
-                    date: '12:14:10',
+                    date: '12/01/2024 12:14:10',
                     message: 'OK',
                     status: 'received'
                 };
