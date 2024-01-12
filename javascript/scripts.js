@@ -166,17 +166,14 @@ createApp({
                             message: 'OK!!',
                             status: 'received'
                         }
-                    ],
-                    backupContacts: []
+                    ]
                 }
                 
             ]
             
         };
     },
-    mounted() {
-        this.backupContacts = [...this.contacts]
-    },
+    
     methods: {
        active(i){
         this.active_index = i;
@@ -203,9 +200,13 @@ createApp({
         }
        },
        show_contact(){
-        this.contacts = [...this.backupContacts]
-
-        this.contacts = this.contacts.filter(contact => contact.name.toLowerCase().includes(this.search.toLowerCase()))
+        for (let i = 0; i < this.contacts.length; i++){
+            if (this.contacts[i].name.toLowerCase().includes(this.search.toLowerCase())){
+                this.contacts[i].visible = true;
+            } else {
+                this.contacts[i].visible = false;
+            }
+        }
        }
     }
 }).mount('#app');

@@ -57,30 +57,38 @@
 
                             <div class="input-group">
                                 <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass smaller"></i></span>
-                                <input @input="show_contact" v-model="search" type="text" class="form-control smaller" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="basic-addon1">
+                                <input @keyup="show_contact" v-model="search" type="text" class="form-control smaller" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="basic-addon1">
                             </div>
 
                         </div>
 
                         <div class="h-74 bg-white pt-1 ps-3 pe-3 pb-1 overflow-auto">
+                            
+                            <div v-for="(contact, i) in contacts" :class="{'h-10': contact.visible === true}">
 
-                            <div @click="active(i)" v-for="(contact, i) in contacts" class="d-flex justify-content-between h-10 mb-2" :class="{'clicked-user-bg': i == active_index}">
-                                <div class="h-100 d-flex">
-                                    <div class="img-container h-100">
-                                        <img class="h-100 rounded-circle" :src="contact.avatar" alt="">
+                                <div v-if="contact.visible === true" @click="active(i)" class="d-flex justify-content-between h-100 mb-2" :class="{'clicked-user-bg': i == active_index}">
+
+                                    <div class="h-100 d-flex">
+
+                                        <div class="img-container h-100">
+                                            <img class="h-100 rounded-circle" :src="contact.avatar" alt="">
+                                        </div>
+
+                                        <div class="h-100 ps-1 d-flex flex-column justify-content-center">
+                                            <span>
+                                                {{ contact.name }}
+                                            </span>
+                                            
+                                            <span class="smaller">Ultimo messaggio inviato</span>
+                                        </div>
+
                                     </div>
 
-                                    <div class="h-100 ps-1 d-flex flex-column justify-content-center">
-                                        <span>
-                                            {{ contact.name }}
-                                        </span>
-                                        <span class="smaller">Ultimo messaggio inviato</span>
+                                    <div class="h-10">
+                                        <span class="smaller">12:00</span>
                                     </div>
                                 </div>
-
-                                <div class="h-10">
-                                    <span class="smaller">12:00</span>
-                                </div>
+                            
                             </div>
 
                         </div>
@@ -113,7 +121,7 @@
                         <div class="h-84 messages-area-bg">
                             
                             <div class="h-100 pt-4 ps-5 pe-5 pb-4 overflow-auto">
-                                
+
                                 <div v-for="(single_message, i) in contacts[active_index].messages" class="mb-3">
 
                                     <div class="d-flex" :class="{'justify-content-end': single_message.status == 'sent'}">
@@ -127,9 +135,9 @@
                                                 {{ single_message.date.split(' ')[1] }}
                                             </div>
                                         </div>
-                                        
+                                            
                                     </div>
-                                    
+                                        
                                 </div>
 
                             </div>
