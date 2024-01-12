@@ -167,11 +167,15 @@ createApp({
                             status: 'received'
                         }
                     ],
+                    backupContacts: []
                 }
                 
             ]
             
         };
+    },
+    mounted() {
+        this.backupContacts = [...this.contacts]
     },
     methods: {
        active(i){
@@ -199,9 +203,9 @@ createApp({
         }
        },
        show_contact(){
-        if (this.contacts[this.active_index].name.includes(this.search)){
-            console.log('nabbo')
-        }
+        this.contacts = [...this.backupContacts]
+
+        this.contacts = this.contacts.filter(contact => contact.name.toLowerCase().includes(this.search.toLowerCase()))
        }
     }
 }).mount('#app');
