@@ -147,7 +147,7 @@
                                 <div class="col-10 p-0 d-flex justify-content-center align-items-center">
 
                                     <div class="input-group">
-                                        <input type="text" class="form-control smaller" placeholder="Scrivi un messaggio" aria-label="Username" aria-describedby="basic-addon1">
+                                        <input @keypress="send_message" v-model="new_messages" type="text" class="form-control smaller" placeholder="Scrivi un messaggio" aria-label="Username" aria-describedby="basic-addon1">
                                     </div>
 
                                 </div>
