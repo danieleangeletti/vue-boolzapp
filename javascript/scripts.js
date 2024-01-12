@@ -191,6 +191,9 @@ createApp({
                 };
                 this.contacts[this.active_index].messages.push(new_message_obj);
                 this.new_messages = '';
+                setTimeout(() => {
+                    this.contacts[this.active_index].messages.push(new_reply_message_obj);
+                  }, 1000);
             }
         }
        }
