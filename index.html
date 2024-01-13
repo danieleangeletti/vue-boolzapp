@@ -128,9 +128,10 @@
 
                                         <div :class="{'sent-message-bg': single_message.status == 'sent', 'bg-white': single_message.status == 'received'}" class="p-2 rounded max-width-messages with-cursor">
                                             
-                                            <div @click="show_my_dropdown_content(i)" class="my-dropdown">
+                                            <div >
                                                 
-                                                {{ single_message.message }}
+                                                <span>{{ single_message.message }}</span>
+                                                <span @click="show_my_dropdown_content(i)" class="my-dropdown ps-3"><i class="fa-solid fa-chevron-down icons-color"></i></span>
 
                                                 <div v-if="i == active_index_messages" class="my-dropdown-content d-block">
                                                     <p>Hello world!</p>
