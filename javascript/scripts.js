@@ -211,6 +211,9 @@ createApp({
        },
        show_my_dropdown_content(i){
         this.active_index_messages = i;
+       },
+       delete_message(my_array, i){
+        my_array.splice(i, 1)
        }
     }
 }).mount('#app');
