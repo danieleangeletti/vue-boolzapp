@@ -3,6 +3,7 @@ const { createApp } = Vue;
 createApp({
     data(){
         return {
+            active_index_messages: null,
             search: '',
             new_messages: '',
             active_index: 0,
@@ -207,6 +208,15 @@ createApp({
                 this.contacts[i].visible = false;
             }
         }
+       },
+       show_my_dropdown_content(i){
+        // if (this.my_flag == 0){
+        //     this.my_flag = 1;
+        // } else {
+        //     this.my_flag = 0;
+        // }
+        this.active_index_messages = i;
+        
        }
     }
 }).mount('#app');

@@ -126,10 +126,16 @@
 
                                     <div class="d-flex" :class="{'justify-content-end': single_message.status == 'sent'}">
 
-                                        <div :class="{'sent-message-bg': single_message.status == 'sent', 'bg-white': single_message.status == 'received'}" class="p-2 rounded max-width-messages">
+                                        <div :class="{'sent-message-bg': single_message.status == 'sent', 'bg-white': single_message.status == 'received'}" class="p-2 rounded max-width-messages with-cursor">
+                                            
+                                            <div @click="show_my_dropdown_content(i)" class="my-dropdown">
+                                                
+                                                    {{ single_message.message }}
 
-                                            <div>
-                                                {{ single_message.message }}
+                                                    <div class="my-dropdown-content" :class="{'d-block': i == active_index_messages}">
+                                                        <p>Hello world!</p>
+                                                    </div>
+                                        
                                             </div>
 
                                             <div class="text-end smaller">
