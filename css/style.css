@@ -1,6 +1,8 @@
 .big-container {
     width: 100vw;
     height: 100vh;
+    background: linear-gradient(180deg, rgba(0,150,136,1) 15%, rgba(216,219,214,1) 15%);
+
 }
 
 .green-bg {
@@ -96,4 +98,8 @@
 
 .overflow-auto {
     overflow: auto;
+}
+
+.mw {
+    max-width: 100%;
 }

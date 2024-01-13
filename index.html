@@ -16,9 +16,9 @@
     </head>
     <body>
 
-        <div class="big-container">
+        <div class="big-container d-flex justify-content-center align-items-center">
 
-            <div id="app" class="container position-absolute top-50 start-50 translate-middle w-75 h-90">
+            <div id="app" class="container w-75 h-90">
 
                 <div class="row h-100">
                     
@@ -126,7 +126,8 @@
 
                                     <div class="d-flex" :class="{'justify-content-end': single_message.status == 'sent'}">
 
-                                        <div class="p-2 rounded max-width-messages" :class="{'sent-message-bg': single_message.status == 'sent', 'bg-white': single_message.status == 'received'}">
+                                        <div :class="{'sent-message-bg': single_message.status == 'sent', 'bg-white': single_message.status == 'received'}" class="p-2 rounded max-width-messages">
+
                                             <div>
                                                 {{ single_message.message }}
                                             </div>
@@ -134,6 +135,7 @@
                                             <div class="text-end smaller">
                                                 {{ single_message.date.split(' ')[1] }}
                                             </div>
+
                                         </div>
                                             
                                     </div>
@@ -173,14 +175,7 @@
                 </div>
 
             </div>
-
-            <div class="green-bg">
-
-            </div>
-
-            <div class="lightgrey-bg">
-                
-            </div>
+            
         </div>
 
        <!-- Vue -->
