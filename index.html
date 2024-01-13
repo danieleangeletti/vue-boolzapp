@@ -130,11 +130,11 @@
                                             
                                             <div @click="show_my_dropdown_content(i)" class="my-dropdown">
                                                 
-                                                    {{ single_message.message }}
+                                                {{ single_message.message }}
 
-                                                    <div class="my-dropdown-content" :class="{'d-block': i == active_index_messages}">
-                                                        <p>Hello world!</p>
-                                                    </div>
+                                                <div v-if="i == active_index_messages" class="my-dropdown-content d-block">
+                                                    <p>Hello world!</p>
+                                                </div>
                                         
                                             </div>
 

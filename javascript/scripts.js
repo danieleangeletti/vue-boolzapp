@@ -210,13 +210,7 @@ createApp({
         }
        },
        show_my_dropdown_content(i){
-        // if (this.my_flag == 0){
-        //     this.my_flag = 1;
-        // } else {
-        //     this.my_flag = 0;
-        // }
         this.active_index_messages = i;
-        
        }
     }
 }).mount('#app');
