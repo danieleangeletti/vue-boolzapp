@@ -126,19 +126,19 @@
 
                                     <div class="d-flex" :class="{'justify-content-end': single_message.status == 'sent'}">
 
-                                        <div :class="{'sent-message-bg': single_message.status == 'sent', 'bg-white': single_message.status == 'received'}" class="p-2 rounded max-width-messages with-cursor">
+                                        <div :class="{'sent-message-bg': single_message.status == 'sent', 'bg-white': single_message.status == 'received'}" class="p-2 rounded max-width-messages">
                                             
                                             <div>
                                                 
                                                 <span>{{ single_message.message }}</span>
-                                                <span @click="show_my_dropdown_content(i)" class="my-dropdown ps-3"><i class="fa-solid fa-chevron-down icons-color"></i></span>
+                                                <span @click="show_my_dropdown_content(i)" class="my-dropdown ps-3"><i class="fa-solid fa-chevron-down icons-color with-cursor-pointer"></i></span>
 
                                                 <div v-if="i == active_index_messages" class="my-dropdown-content d-block">
                                                     
                                                     <ul class="m-0 p-0 no-decoration">
                                                         
-                                                        <li class="options-single-message">Message info</li>
-                                                        <li @click="delete_message(contacts[active_index].messages, i)" class="options-single-message">Delete message</li>
+                                                        <li class="options-single-message with-cursor-pointer">Message info</li>
+                                                        <li @click="delete_message(contacts[active_index].messages, i)" class="options-single-message with-cursor-pointer">Delete message</li>
                             
                                                     </ul>
 
