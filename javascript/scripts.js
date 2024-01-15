@@ -246,8 +246,7 @@ createApp({
         final_result_current_time += now.getMinutes().toString().padStart(2, '0');
         final_result_current_time += ':';
         final_result_current_time += now.getSeconds().toString().padStart(2, '0');
-
-        console.log(final_result_current_time);
+        
         return final_result_current_time;
        }
     }
