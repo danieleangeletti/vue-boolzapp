@@ -3,6 +3,7 @@ const { createApp } = Vue;
 createApp({
     data(){
         return {
+            my_flag: 0,
             active_index_messages: null,
             search: '',
             new_messages: '',
@@ -210,8 +211,14 @@ createApp({
         }
        },
        show_my_dropdown_content(i){
-        this.active_index_messages = i;
-       },
+        if (this.my_flag == 0){
+            this.active_index_messages = i;
+            this.my_flag = 1;
+        } else {
+            this.active_index_messages = null;
+            this.my_flag = 0;
+        }
+        },
        delete_message(my_array, i){
         my_array.splice(i, 1)
         this.active_index_messages = null;
