@@ -84,8 +84,8 @@
 
                                     </div>
 
-                                    <div class="h-10">
-                                        <span v-if="contacts[i].messages.length > 0" class="smaller">{{ contacts[i].messages[contacts[i].messages.length - 1].date.split(' ')[1] }}</span>
+                                    <div v-if="contacts[i].messages.length > 0" class="h-10">
+                                        <span class="smaller">{{ contacts[i].messages[contacts[i].messages.length - 1].date.split(' ')[1] }}</span>
                                     </div>
                                 </div>
                             
