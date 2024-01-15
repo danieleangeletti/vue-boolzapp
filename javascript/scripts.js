@@ -214,6 +214,7 @@ createApp({
        },
        delete_message(my_array, i){
         my_array.splice(i, 1)
+        this.active_index_messages = null;
        }
     }
 }).mount('#app');
