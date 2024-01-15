@@ -88,10 +88,10 @@
 
                                         <div v-if="contacts[i].messages.length > 0" class="h-10">
                                             <span class="smaller">{{ (() => {
-                                                let time_without_seconds = contacts[i].messages[contacts[i].messages.length - 1].date.split(' ')[1].split(':');
+                                                const time_without_seconds = contacts[i].messages[contacts[i].messages.length - 1].date.split(' ')[1].split(':');
                                                 time_without_seconds.splice(2, 1)
-                                                time_without_seconds = time_without_seconds.join(':');
-                                                return time_without_seconds;
+                                                let time_without_seconds_string = time_without_seconds.join(':');
+                                                return time_without_seconds_string;
                                             })() }}</span>
                                         </div>
                                     </div>
@@ -114,10 +114,10 @@
                                     <div class="h-100 ps-1 d-flex flex-column justify-content-center">
                                         <span>{{ contacts[active_index].name }}</span>
                                         <span v-if="contacts[active_index].messages.length > 0" class="smaller">Ultimo accesso oggi alle {{ (() => {
-                                            let time_without_seconds = contacts[active_index].messages[contacts[active_index].messages.length - 1].date.split(' ')[1].split(':');
+                                            const time_without_seconds = contacts[active_index].messages[contacts[active_index].messages.length - 1].date.split(' ')[1].split(':');
                                             time_without_seconds.splice(2, 1)
-                                            time_without_seconds = time_without_seconds.join(':');
-                                            return time_without_seconds;
+                                            let time_without_seconds_string = time_without_seconds.join(':');
+                                            return time_without_seconds_string;
                                         })() }}</span></span>
                                     </div>
                                 </div>
@@ -160,10 +160,10 @@
 
                                                 <div class="text-end smaller">
                                                     <span>{{ (() => {
-                                                            let time_without_seconds = single_message.date.split(' ')[1].split(':');
+                                                            const time_without_seconds = single_message.date.split(' ')[1].split(':');
                                                             time_without_seconds.splice(2, 1)
-                                                            time_without_seconds = time_without_seconds.join(':');
-                                                            return time_without_seconds;
+                                                            let time_without_seconds_string = time_without_seconds.join(':');
+                                                            return time_without_seconds_string;
                                                         })() }}
                                                     </span>
                                                 </div>
