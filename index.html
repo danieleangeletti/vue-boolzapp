@@ -16,168 +16,172 @@
     </head>
     <body>
 
-        <div class="big-container d-flex justify-content-center align-items-center">
+        <div id="app">
 
-            <div id="app" class="container w-75 h-90">
+            <div @click="hide_my_dropdown_content" class="big-container d-flex justify-content-center align-items-center">
 
-                <div class="row h-100">
-                    
-                    <div class="col-5 h-100 p-0">
+                <div class="container w-75 h-90">
+
+                    <div class="row h-100">
                         
-                        <div class="h-8 lightgrey-app-bg d-flex justify-content-between align-items-center pt-1 ps-3 pe-3 pb-1">
-
-                            <div class="img-container h-100">
-                                <img class="h-100 rounded-circle" src="./img/avatar_io.jpg" alt="">
-
-                                <span class="ps-1">Sofia</span>
-                            </div>
-
-                            <div>
-                                <a href=""><i class="fa-solid fa-circle-notch ps-1 pe-1 icons-color"></i></a>
-                                <a href=""><i class="fa-solid fa-message ps-1 pe-1 icons-color"></i></a>
-                                <a href=""><i class="fa-solid fa-ellipsis-vertical ps-1 pe-1 icons-color"></i></a>
-                            </div>
-
-                        </div>
-
-                        <div class="h-10 notification-column-bg d-flex align-items-center pt-1 ps-3 pe-3 pb-1">
-
-                            <div class="bell-container rounded-circle d-flex justify-content-center align-items-center">
-                                <i class="fa-solid fa-bell-slash"></i>
-                            </div>
-
-                            <div class="h-100 ps-1 d-flex flex-column justify-content-center">
-                                <span>Ricevi notifiche di nuovi messaggi</span>
-                                <span class="smaller">Attiva notifiche desktop</span>
-                            </div>
-
-                        </div>
-
-                        <div class="h-8 ps-1 pe-1 d-flex align-items-center new-chat-bg">
-
-                            <div class="input-group">
-                                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass smaller"></i></span>
-                                <input @keyup="show_contact" v-model="search" type="text" class="form-control smaller" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="basic-addon1">
-                            </div>
-
-                        </div>
-
-                        <div class="h-74 bg-white overflow-auto">
+                        <div class="col-5 h-100 p-0">
                             
-                            <div v-for="(contact, i) in contacts" :class="{'h-14': contact.visible === true}">
+                            <div class="h-8 lightgrey-app-bg d-flex justify-content-between align-items-center pt-1 ps-3 pe-3 pb-1">
 
-                                <div v-if="contact.visible === true" @click="active(i)" class="d-flex justify-content-between h-100 pt-1 ps-3 pe-3 pb-1 with-cursor-pointer" :class="{'clicked-user-bg': i == active_index}">
-
-                                    <div class="h-100 d-flex">
-
-                                        <div class="img-container h-100">
-                                            <img class="h-100 rounded-circle" :src="contact.avatar" alt="">
-                                        </div>
-
-                                        <div class="h-100 ps-1 d-flex flex-column justify-content-center">
-                                            <span>
-                                                {{ contact.name }}
-                                            </span>
-                                            
-                                            <span v-if="contacts[i].messages.length > 0" class="smaller">{{ contacts[i].messages[contacts[i].messages.length - 1].message }}</span>
-                                        </div>
-
-                                    </div>
-
-                                    <div v-if="contacts[i].messages.length > 0" class="h-10">
-                                        <span class="smaller">{{ contacts[i].messages[contacts[i].messages.length - 1].date.split(' ')[1] }}</span>
-                                    </div>
-                                </div>
-                            
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <div class="col-7 h-100 p-0">
-                        
-                        <div class="h-8 lightgrey-app-bg d-flex justify-content-between align-items-center pt-1 ps-3 pe-3 pb-1">
-                            
-                            <div class="h-100 d-flex">
                                 <div class="img-container h-100">
-                                    <img class="h-100 rounded-circle" src="./img/avatar_1.jpg" alt="">
+                                    <img class="h-100 rounded-circle" src="./img/avatar_io.jpg" alt="">
+
+                                    <span class="ps-1">Sofia</span>
+                                </div>
+
+                                <div>
+                                    <i class="fa-solid fa-circle-notch ps-1 pe-1 icons-color with-cursor-pointer"></i>
+                                    <i class="fa-solid fa-message ps-1 pe-1 icons-color with-cursor-pointer"></i>
+                                    <i class="fa-solid fa-ellipsis-vertical ps-1 pe-1 icons-color with-cursor-pointer"></i>
+                                </div>
+
+                            </div>
+
+                            <div class="h-10 notification-column-bg d-flex align-items-center pt-1 ps-3 pe-3 pb-1">
+
+                                <div class="bell-container rounded-circle d-flex justify-content-center align-items-center">
+                                    <i class="fa-solid fa-bell-slash"></i>
                                 </div>
 
                                 <div class="h-100 ps-1 d-flex flex-column justify-content-center">
-                                    <span>{{ contacts[active_index].name }}</span>
-                                    <span v-if="contacts[active_index].messages.length > 0" class="smaller">Ultimo accesso oggi alle {{ contacts[active_index].messages[contacts[active_index].messages.length - 1].date.split(' ')[1] }}</span></span>
+                                    <span>Ricevi notifiche di nuovi messaggi</span>
+                                    <span class="smaller">Attiva notifiche desktop</span>
                                 </div>
+
                             </div>
 
-                            <div>
-                                <a href=""><i class="fa-solid fa-magnifying-glass ps-1 pe-1 icons-color"></i></a>
-                                <a href=""><i class="fa-solid fa-paperclip ps-1 pe-1 icons-color"></i></a>
-                                <a href=""><i class="fa-solid fa-ellipsis-vertical ps-1 pe-1 icons-color"></i></a>
+                            <div class="h-8 ps-1 pe-1 d-flex align-items-center new-chat-bg">
+
+                                <div class="input-group">
+                                    <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass smaller"></i></span>
+                                    <input @keyup="show_contact" v-model="search" type="text" class="form-control smaller" placeholder="Cerca o inizia una nuova chat" aria-label="Username" aria-describedby="basic-addon1">
+                                </div>
+
                             </div>
 
-                        </div>
+                            <div class="h-74 bg-white overflow-auto">
+                                
+                                <div v-for="(contact, i) in contacts" :class="{'h-14': contact.visible === true}">
 
-                        <div @click="current_time" class="h-84 messages-area-bg">
-                            
-                            <div class="h-100 pt-4 ps-5 pe-5 pb-4 overflow-auto">
+                                    <div v-if="contact.visible === true" @click="active(i)" class="d-flex justify-content-between h-100 pt-1 ps-3 pe-3 pb-1 with-cursor-pointer" :class="{'clicked-user-bg': i == active_index}">
 
-                                <div v-for="(single_message, i) in contacts[active_index].messages" class="mb-3">
+                                        <div class="h-100 d-flex">
 
-                                    <div class="d-flex" :class="{'justify-content-end': single_message.status == 'sent'}">
-
-                                        <div :class="{'sent-message-bg': single_message.status == 'sent', 'bg-white': single_message.status == 'received'}" class="p-2 rounded max-width-messages">
-                                            
-                                            <div>
-                                                
-                                                <span>{{ single_message.message }}</span>
-                                                <span @click="show_my_dropdown_content(i)" class="my-dropdown ps-3"><i class="fa-solid fa-chevron-down icons-color with-cursor-pointer"></i></span>
-
-                                                <div v-if="i == active_index_messages" class="my-dropdown-content d-block">
-                                                    
-                                                    <ul class="m-0 p-0 no-decoration">
-                                                        
-                                                        <li class="options-single-message with-cursor-pointer">Message info</li>
-                                                        <li @click="delete_message(contacts[active_index].messages, i)" class="options-single-message with-cursor-pointer">Delete message</li>
-                            
-                                                    </ul>
-
-                                                </div>
-                                        
+                                            <div class="img-container h-100">
+                                                <img class="h-100 rounded-circle" :src="contact.avatar" alt="">
                                             </div>
 
-                                            <div class="text-end smaller">
-                                                <span>{{ single_message.date.split(' ')[1] }}</span>
+                                            <div class="h-100 ps-1 d-flex flex-column justify-content-center">
+                                                <span>
+                                                    {{ contact.name }}
+                                                </span>
+                                                
+                                                <span v-if="contacts[i].messages.length > 0" class="smaller">{{ contacts[i].messages[contacts[i].messages.length - 1].message }}</span>
                                             </div>
 
                                         </div>
-                                            
+
+                                        <div v-if="contacts[i].messages.length > 0" class="h-10">
+                                            <span class="smaller">{{ contacts[i].messages[contacts[i].messages.length - 1].date.split(' ')[1] }}</span>
+                                        </div>
                                     </div>
-                                        
+                                
                                 </div>
 
                             </div>
 
                         </div>
 
-                        <div class="h-8 pt-1 ps-3 pe-3 pb-1 lightgrey-app-bg">
+                        <div class="col-7 h-100 p-0">
                             
-                            <div class="row h-100">
+                            <div class="h-8 lightgrey-app-bg d-flex justify-content-between align-items-center pt-1 ps-3 pe-3 pb-1">
+                                
+                                <div class="h-100 d-flex">
+                                    <div class="img-container h-100">
+                                        <img class="h-100 rounded-circle" src="./img/avatar_1.jpg" alt="">
+                                    </div>
 
-                                <div class="col-1 p-0 d-flex justify-content-center align-items-center">
-                                    <a href=""><i class="fa-solid fa-face-smile dark-font bigger"></i></a>
+                                    <div class="h-100 ps-1 d-flex flex-column justify-content-center">
+                                        <span>{{ contacts[active_index].name }}</span>
+                                        <span v-if="contacts[active_index].messages.length > 0" class="smaller">Ultimo accesso oggi alle {{ contacts[active_index].messages[contacts[active_index].messages.length - 1].date.split(' ')[1] }}</span></span>
+                                    </div>
                                 </div>
 
-                                <div class="col-10 p-0 d-flex justify-content-center align-items-center">
+                                <div>
+                                    <i class="fa-solid fa-magnifying-glass ps-1 pe-1 icons-color with-cursor-pointer"></i>
+                                    <i class="fa-solid fa-paperclip ps-1 pe-1 icons-color with-cursor-pointer"></i>
+                                    <i class="fa-solid fa-ellipsis-vertical ps-1 pe-1 icons-color with-cursor-pointer"></i>
+                                </div>
 
-                                    <div class="input-group">
-                                        <input @keypress="send_message" v-model="new_messages" type="text" class="form-control smaller" placeholder="Scrivi un messaggio" aria-label="Username" aria-describedby="basic-addon1">
+                            </div>
+
+                            <div class="h-84 messages-area-bg">
+                                
+                                <div class="h-100 pt-4 ps-5 pe-5 pb-4 overflow-auto">
+
+                                    <div v-for="(single_message, i) in contacts[active_index].messages" class="mb-3">
+
+                                        <div class="d-flex" :class="{'justify-content-end': single_message.status == 'sent'}">
+
+                                            <div :class="{'sent-message-bg': single_message.status == 'sent', 'bg-white': single_message.status == 'received'}" class="p-2 rounded max-width-messages">
+                                                
+                                                <div>
+                                                    
+                                                    <span>{{ single_message.message }}</span>
+                                                    <span @click.stop="show_my_dropdown_content(i)" class="my-dropdown ps-3"><i class="fa-solid fa-chevron-down icons-color with-cursor-pointer"></i></span>
+
+                                                    <div v-if="i == active_index_messages" class="my-dropdown-content d-block">
+                                                        
+                                                        <ul class="m-0 p-0 no-decoration">
+                                                            
+                                                            <li class="options-single-message with-cursor-pointer">Message info</li>
+                                                            <li @click="delete_message(contacts[active_index].messages, i)" class="options-single-message with-cursor-pointer">Delete message</li>
+                                
+                                                        </ul>
+
+                                                    </div>
+                                            
+                                                </div>
+
+                                                <div class="text-end smaller">
+                                                    <span>{{ single_message.date.split(' ')[1] }}</span>
+                                                </div>
+
+                                            </div>
+                                                
+                                        </div>
+                                            
                                     </div>
 
                                 </div>
 
-                                <div class="col-1 p-0 d-flex justify-content-center align-items-center">
-                                    <a href=""><i class="fa-solid fa-microphone dark-font bigger"></i></a>
+                            </div>
+
+                            <div class="h-8 pt-1 ps-3 pe-3 pb-1 lightgrey-app-bg">
+                                
+                                <div class="row h-100">
+
+                                    <div class="col-1 p-0 d-flex justify-content-center align-items-center">
+                                        <i class="fa-solid fa-face-smile dark-font bigger with-cursor-pointer"></i>
+                                    </div>
+
+                                    <div class="col-10 p-0 d-flex justify-content-center align-items-center">
+
+                                        <div class="input-group">
+                                            <input @keypress="send_message" v-model="new_messages" type="text" class="form-control smaller" placeholder="Scrivi un messaggio" aria-label="Username" aria-describedby="basic-addon1">
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-1 p-0 d-flex justify-content-center align-items-center">
+                                        <i class="fa-solid fa-microphone dark-font bigger with-cursor-pointer"></i>
+                                    </div>
+
                                 </div>
 
                             </div>
@@ -187,9 +191,9 @@
                     </div>
 
                 </div>
-
+                
             </div>
-            
+
         </div>
 
        <!-- Vue -->

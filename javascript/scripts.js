@@ -219,6 +219,10 @@ createApp({
             this.my_flag = 0;
         }
         },
+        hide_my_dropdown_content(){
+            this.active_index_messages = null;
+            this.my_flag = 0;
+        },
        delete_message(my_array, i){
         my_array.splice(i, 1)
         this.active_index_messages = null;
