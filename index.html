@@ -29,7 +29,7 @@
                             <div class="img-container h-100">
                                 <img class="h-100 rounded-circle" src="./img/avatar_io.jpg" alt="">
 
-                                <span>Sofia</span>
+                                <span class="ps-1">Sofia</span>
                             </div>
 
                             <div>
@@ -62,11 +62,11 @@
 
                         </div>
 
-                        <div class="h-74 bg-white pt-1 ps-3 pe-3 pb-1 overflow-auto">
+                        <div class="h-74 bg-white overflow-auto">
                             
-                            <div v-for="(contact, i) in contacts" :class="{'h-10 mb-2': contact.visible === true}">
+                            <div v-for="(contact, i) in contacts" :class="{'h-10': contact.visible === true}">
 
-                                <div v-if="contact.visible === true" @click="active(i)" class="d-flex justify-content-between h-100 with-cursor-pointer" :class="{'clicked-user-bg': i == active_index}">
+                                <div v-if="contact.visible === true" @click="active(i)" class="d-flex justify-content-between h-100 pt-1 ps-3 pe-3 pb-1 with-cursor-pointer" :class="{'clicked-user-bg': i == active_index}">
 
                                     <div class="h-100 d-flex">
 
@@ -79,13 +79,13 @@
                                                 {{ contact.name }}
                                             </span>
                                             
-                                            <span class="smaller">{{ contacts[i].messages[contacts[i].messages.length - 1].message }}</span>
+                                            <span v-if="contacts[i].messages.length > 0" class="smaller">{{ contacts[i].messages[contacts[i].messages.length - 1].message }}</span>
                                         </div>
 
                                     </div>
 
                                     <div class="h-10">
-                                        <span class="smaller">{{ contacts[i].messages[contacts[i].messages.length - 1].date.split(' ')[1] }}</span>
+                                        <span v-if="contacts[i].messages.length > 0" class="smaller">{{ contacts[i].messages[contacts[i].messages.length - 1].date.split(' ')[1] }}</span>
                                     </div>
                                 </div>
                             
@@ -106,7 +106,7 @@
 
                                 <div class="h-100 ps-1 d-flex flex-column justify-content-center">
                                     <span>{{ contacts[active_index].name }}</span>
-                                    <span class="smaller">Ultimo accesso oggi alle {{ contacts[active_index].messages[contacts[active_index].messages.length - 1].date.split(' ')[1] }}</span>
+                                    <span v-if="contacts[active_index].messages.length > 0" class="smaller">Ultimo accesso oggi alle {{ contacts[active_index].messages[contacts[active_index].messages.length - 1].date.split(' ')[1] }}</span></span>
                                 </div>
                             </div>
 
