@@ -184,12 +184,12 @@ createApp({
         if (event.keyCode === 13){
             if (this.new_messages.length > 0){
                 const new_message_obj = {
-                    date: '12/01/2024 12:14:00',
+                    date: this.current_time(),
                     message: this.new_messages,
                     status: 'sent'
                 };
                 const new_reply_message_obj = {
-                    date: '12/01/2024 12:14:10',
+                    date: this.current_time(),
                     message: 'OK',
                     status: 'received'
                 };
@@ -223,6 +223,28 @@ createApp({
         my_array.splice(i, 1)
         this.active_index_messages = null;
         this.my_flag = 0;
+       },
+       current_time(){
+        let final_result_current_time = '';
+
+        const now = new Date();
+
+        final_result_current_time += now.getDate().toString().padStart(2, '0');
+        final_result_current_time += '/';
+        final_result_current_time += (now.getMonth() + 1).toString().padStart(2, '0');
+        final_result_current_time += '/';
+        final_result_current_time += now.getFullYear().toString().padStart(2, '0');
+
+        final_result_current_time += ' ';
+
+        final_result_current_time += now.getHours().toString().padStart(2, '0');
+        final_result_current_time += ':';
+        final_result_current_time += now.getMinutes().toString().padStart(2, '0');
+        final_result_current_time += ':';
+        final_result_current_time += now.getSeconds().toString().padStart(2, '0');
+
+        console.log(final_result_current_time);
+        return final_result_current_time;
        }
     }
 }).mount('#app');
