@@ -188,14 +188,14 @@ createApp({
                     message: this.new_messages,
                     status: 'sent'
                 };
-                const new_reply_message_obj = {
-                    date: this.current_time(),
-                    message: 'OK',
-                    status: 'received'
-                };
                 this.contacts[this.active_index].messages.push(new_message_obj);
                 this.new_messages = '';
                 setTimeout(() => {
+                    const new_reply_message_obj = {
+                        date: this.current_time(),
+                        message: 'OK',
+                        status: 'received'
+                    };
                     this.contacts[this.active_index].messages.push(new_reply_message_obj);
                   }, 1000);
             }
@@ -246,7 +246,7 @@ createApp({
         final_result_current_time += now.getMinutes().toString().padStart(2, '0');
         final_result_current_time += ':';
         final_result_current_time += now.getSeconds().toString().padStart(2, '0');
-        
+
         return final_result_current_time;
        }
     }
