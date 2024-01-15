@@ -1,127 +1,130 @@
 .big-container {
-    width: 100vw;
-    height: 100vh;
-    background: linear-gradient(180deg, rgba(0,150,136,1) 15%, rgba(216,219,214,1) 15%);
-
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 150, 136, 1) 15%,
+    rgba(216, 219, 214, 1) 15%
+  );
 }
 
 .green-bg {
-    width: 100vw;
-    height: 20vh;
-    background-color: #009688;
+  width: 100vw;
+  height: 20vh;
+  background-color: #009688;
 }
 
 .lightgrey-bg {
-    width: 100vw;
-    height: 80vh;
-    background-color: #DADBD4;
+  width: 100vw;
+  height: 80vh;
+  background-color: #dadbd4;
 }
 
 .lightgrey-app-bg {
-    background-color: #EAEAEA;
+  background-color: #eaeaea;
 }
 
 .notification-column-bg {
-    background-color: #8EDAFC;
+  background-color: #8edafc;
 }
 
 .messages-area-bg {
-    background-image: url("../img/mine.jpg");
+  background-image: url("../img/mine.jpg");
 }
 
 .new-chat-bg {
-    background-color: #FAFAFA;
+  background-color: #fafafa;
 }
 
 .sent-message-bg {
-    background-color: #D5F9BA;
+  background-color: #d5f9ba;
 }
 
 .clicked-user-bg {
-    background-color: #E9EBEB;
+  background-color: #e9ebeb;
 }
 
 .icons-color {
-    color: #989898;
+  color: #989898;
 }
 
 .dark-font {
-    color: #5F687D;
+  color: #5f687d;
 }
 
 .smaller {
-    color: #838790;
-    font-size: 0.8em;
+  color: #838790;
+  font-size: 0.8em;
 }
 
 .bigger {
-    font-size: 1.2em;
+  font-size: 1.2em;
 }
 
 .bell-container {
-    width: 43px;
-    height: 43px;
-    background-color: white;
+  width: 43px;
+  height: 43px;
+  background-color: white;
 }
 
 .h-8 {
-    height: 8%;
+  height: 8%;
 }
 
 .h-10 {
-    height: 10%;
+  height: 10%;
 }
 
 .h-14 {
-    height: 14%;
+  height: 14%;
 }
 
 .h-74 {
-    height: 74%;
+  height: 74%;
 }
 
 .h-84 {
-    height: 84%;
+  height: 84%;
 }
 
 .h-90 {
-    height: 90%;
+  height: 90%;
 }
 
 .max-width-messages {
-    max-width: 75%;
+  max-width: 75%;
 }
 
 .no-decoration {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 .overflow-auto {
-    overflow: auto;
+  overflow: auto;
 }
 
 .mw {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 .with-cursor-pointer {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .my-dropdown {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 
 .my-dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 12px 16px;
-    z-index: 1;
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  z-index: 1;
 }
 
 .options-single-message:hover {
-    background-color: #E9EBEB;
+  background-color: #e9ebeb;
 }
