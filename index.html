@@ -64,7 +64,7 @@
 
                         <div class="h-74 bg-white overflow-auto">
                             
-                            <div v-for="(contact, i) in contacts" :class="{'h-10': contact.visible === true}">
+                            <div v-for="(contact, i) in contacts" :class="{'h-14': contact.visible === true}">
 
                                 <div v-if="contact.visible === true" @click="active(i)" class="d-flex justify-content-between h-100 pt-1 ps-3 pe-3 pb-1 with-cursor-pointer" :class="{'clicked-user-bg': i == active_index}">
 
